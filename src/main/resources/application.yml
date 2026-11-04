@@ -1,0 +1,2 @@
+agenda:
+  duracion-consulta-minutos: ${AGENDA_DURACION_CONSULTA_MINUTOS:30}

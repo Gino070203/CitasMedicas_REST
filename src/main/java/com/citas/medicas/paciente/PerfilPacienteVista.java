@@ -1,0 +1,10 @@
+package com.citas.medicas.paciente;
+
+public record PerfilPacienteVista(
+		PerfilPacienteForm formulario,
+		String correo,
+		String numeroHistoria,
+		String sis,
+		boolean numeroHistoriaVerificado,
+		boolean sisVerificado) {
+}

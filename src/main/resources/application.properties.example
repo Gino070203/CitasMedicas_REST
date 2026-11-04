@@ -1,0 +1,52 @@
+# =====================================================================
+# PLANTILLA DE CONFIGURACIÓN
+# Copia este archivo a "application.properties" (misma carpeta) y
+# completa los valores con tus credenciales.
+# "application.properties" NO se sube a GitHub (está en .gitignore).
+# =====================================================================
+
+spring.application.name=Avance_03_Rest
+server.port=8080
+
+# Base de datos MySQL
+spring.datasource.url=jdbc:mysql://localhost:3306/citasMedicas?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=CAMBIAR_POR_TU_CONTRASENA
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+spring.jpa.open-in-view=false
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+
+spring.datasource.hikari.maximum-pool-size=20
+spring.datasource.hikari.minimum-idle=5
+
+server.compression.enabled=true
+server.compression.mime-types=application/json,application/javascript,text/css,text/html,text/plain
+server.compression.min-response-size=1024
+
+# Correo SMTP (Gmail) — usa una "contraseña de aplicación"
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=CAMBIAR_POR_TU_CORREO
+spring.mail.password=CAMBIAR_POR_TU_PASSWORD_DE_APP
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+spring.mail.properties.mail.smtp.ssl.trust=smtp.gmail.com
+
+# JWT
+app.jwt.secret=${JWT_SECRET:clave-secreta-temporal-para-desarrollo}
+app.jwt.expiration-ms=7200000
+
+# CORS (Angular)
+app.cors.allowed-origins=${CORS_ALLOWED_ORIGINS:http://localhost:4200}
+
+# OAuth2 Google
+spring.security.oauth2.client.registration.google.client-id=${GOOGLE_CLIENT_ID:TU_CLIENT_ID}
+spring.security.oauth2.client.registration.google.client-secret=${GOOGLE_CLIENT_SECRET:TU_CLIENT_SECRET}
+spring.security.oauth2.client.registration.google.scope=profile,email
+
+# URL de Angular que recibe el token tras el login con Google
+app.oauth2.redirect-uri=${OAUTH2_REDIRECT_URI:http://localhost:4200/auth/oauth2-redirect}
