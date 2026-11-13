@@ -41,3 +41,7 @@ src/main/resources/application.properties
 ### Sistema operativo ###
 .DS_Store
 Thumbs.db
+
+### LSP / editores ###
+.metals/
+.metals.lock.db
