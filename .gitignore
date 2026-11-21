@@ -33,7 +33,7 @@ build/
 .vscode/
 
 ### Credenciales y configuración local (NO subir) ###
-src/main/resources/application.properties
+src/main/resources/application-local.properties
 .env
 .env.*
 !.env.example
